@@ -1,0 +1,10 @@
+body{
+	background-image: url('../image/back.jpg');
+	background-repeat: no-repeat;
+}
+
+#form_login{
+	width: 30%;
+	margin: 200px 35%;
+	text-align: left;
+}

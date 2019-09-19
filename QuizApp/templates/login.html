@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+</head>
+<body>
+	<form method="post" action="" id="form_login">
+		{% csrf_token%}
+		<div>
+			<label class="col-form-label" > User:</label>  {{ form.userName}}
+		</div>
+		<div>
+			<label> Password:</label> {{ form.passWord }}
+		</div>
+		<div>
+			<button type="submit" class="btn-success"> Login</button>
+		</div>
+		<div>
+			<a href="#">Quên mật khẩu</a> </br>
+			<a href="#">Chưa có tài khoản? Đăng kí</a>
+		</div>
+		
+	</form>
+</body>
+</html>
