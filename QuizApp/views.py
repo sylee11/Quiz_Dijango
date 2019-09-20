@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import LoginForm
+from django.http import HttpResponseRedirect
+from .forms import LoginForm, RegisterForm , ForgetPassForm ,QuizForm
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
-
+from .models import Question
 # Create your views here.
 
 def login(request):
@@ -31,10 +32,28 @@ def login(request):
 	return render(request, 'login.html', {'form': loginForm })
 
 def home(request):
-	return render(request, 'home.html')
+	quiz = QuizForm()
+	allq = Question.objects.all()
+	b = allq[0].id
+	return render(request, 'home.html', {'form': allq})
 
 def logout_view(request):
 	logout(request)
 	loginForm = LoginForm()
 	#return render(request, 'login.html',{'form': loginForm })
 	return redirect('login')
+
+def register(request):
+	registerForm = RegisterForm()
+	if request.method == 'POST':
+		registerForm = RegisterForm(request.POST)
+		if registerForm.is_valid():
+			registerForm.save()
+			return HttpResponseRedirect('/')
+	return render(request, 'register.html', {'form': registerForm})
+
+def forgetPass(request):
+	formForget = ForgetPassForm()
+
+	#if request.method == "POST":
+	return render(request, 'forgetpass.html', {'form' : formForget})

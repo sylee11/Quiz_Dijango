@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content%}
+	<h1><center>ĐĂNG KÍ TÀI KHOẢN</center></h1>
+	<div id="form_register">
+		<form action="" method="post" id="">
+			{% csrf_token %}
+			<div>
+				<label>UserName</label> {{ form.userName }} </br>
+				<label>Email</label> {{ form.email }} </br>
+				<label>Password</label> {{ form.passWord }} </br>
+				<label>Nhập lại Pass</label> {{ form.passWord2}} </br>
+			</div>
+			<div>
+				<button type="submit" class="btn-primary">Đăng kí</button>
+			</div>
+		</form>
+		<div>
+			<a href="#">Quên mật khẩu</a> </br>
+			<a href="{% url 'login' %}">Đã có tài khoản? Đăng Nhập</a>
+		</div>
+	</div>
+{% endblock%}

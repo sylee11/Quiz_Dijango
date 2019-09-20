@@ -16,5 +16,5 @@ class Question(models.Model):
 	anser = models.IntegerField()
 	user_id = models.ForeignKey(User, on_delete = models.CASCADE)
 	category_id = models.ForeignKey(Category, on_delete = models.CASCADE)
-	def __str__(self):
-		return(self.question)
+	# def __str__(self):
+	# 	return(self.question)

@@ -8,7 +8,12 @@
 	<script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
 </head>
 <body>
-	<form method="post" action="" id="form_login">
+	<form method="post" id="form_login" action="">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn-success">Login</button>
+	</form>
+<!-- 	<form method="post" action="" id="form_login">
 		{% csrf_token%}
 		<div>
 			<label class="col-form-label" > User:</label>  {{ form.userName}}
@@ -20,10 +25,10 @@
 			<button type="submit" class="btn-success"> Login</button>
 		</div>
 		<div>
-			<a href="#">Quên mật khẩu</a> </br>
-			<a href="#">Chưa có tài khoản? Đăng kí</a>
+			<a href="{% url 'forgetPass' %}">Quên mật khẩu</a> </br>
+			<a href="{% url 'register' %}">Chưa có tài khoản? Đăng kí</a>
 		</div>
 		
-	</form>
+	</form> -->
 </body>
 </html>

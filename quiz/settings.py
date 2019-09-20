@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "QuizApp/static"),
 ]
+
+#when login complte
+LOGIN_REDIRECT_URL = 'home'

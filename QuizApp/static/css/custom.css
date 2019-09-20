@@ -8,3 +8,61 @@ body{
 	margin: 200px 35%;
 	text-align: left;
 }
+#form_login label{
+	width: 100px;
+	color: red;
+}
+
+#form_register{
+	width: 30%;
+	margin: 200px 35%;
+	text-align: left;
+
+}
+
+#form_register label{
+	color: red;
+	font-weight: bold;
+	width: 150px;
+}
+#form_register input{
+}
+#form_register a{
+	color: white;
+	font-weight: bold;
+}
+#form_register button{
+	margin-left: 150px ;
+}
+
+.question_body{
+	border: solid 1px black;
+	background-color: white;
+	margin: 100px 0;
+}
+.question_number{
+	font-weight: bold;
+	text-align: center;
+	color:#428bca;
+}
+.question_name{
+	font-weight: bold;
+
+}
+.question_anser{
+	margin-left: 10px;
+}
+.time{
+	border: solid 1px black;
+	background-color: white;
+	margin: 100px 30px ;
+}
+.time button{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 100px;
+}
+.buton_direct{
+	width: 80%;
+	margin-left: 10%;
+}
